@@ -71,6 +71,10 @@ int main()
 	{
 		std::cout << "Received: " << buffer << std::endl;
 		send(new_socket, buffer, valread, 0);
+        if (strncmp(buffer, "exit", 4) == 0)
+        {
+            break;
+        }
 		memset(buffer, 0, BUFFER_SIZE); // バッファのクリア
 	}
 
